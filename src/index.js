@@ -115,7 +115,7 @@ export class WebView extends Component {
       );
     }
 
-    const { title, source, onLoad, scrollEnabled } = this.props;
+    const { title, source, onLoad, scrollEnabled, ...other } = this.props;
     const styleObj = StyleSheet.flatten(this.props.style);
     return createElement('iframe', {
       title,
@@ -130,6 +130,7 @@ export class WebView extends Component {
       frameBorder: '0',
       seamless: true,
       onLoad,
+      ...other
     });
   }
 }
